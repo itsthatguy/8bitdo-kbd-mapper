@@ -7,3 +7,7 @@ pcaps
 *.pdf
 *.sh
 tmp*
+
+# Nix / direnv
+result
+.direnv

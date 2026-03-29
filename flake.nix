@@ -11,10 +11,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
-        version =
-          if self ? rev
-          then self.shortRev
-          else "dirty";
+        version = "0.0.0+${self.shortRev or "dirty"}";
 
         patchUdevRules = rulesFile:
           pkgs.runCommand (builtins.baseNameOf rulesFile) { } ''
